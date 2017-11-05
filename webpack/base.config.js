@@ -16,11 +16,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'sale',
       // filename: path.resolve(process.cwd(), "src/base/webpack.template.html"),
-      filename: "sale.html",
+      // filename: "assets/sale.html",
       // template: "../base/webpack.template.html",
       template: path.resolve(process.cwd(), "src/base/webpack.template.html"),
-      chunks: ['sale']
-    })
+      chunks: ['list']
+    }),
   ],
 
   module: {
