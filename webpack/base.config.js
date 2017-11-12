@@ -16,14 +16,26 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'sale',
       template: '../base/webpack.template.html',
+      // inject: true,
       chunks: ['sale'],
       filename: 'sale.html',
     }),
+    new HtmlWebpackPlugin({
+      title: 'list',
+      template: '../base/webpack.template.html',
+      inject: true,
+      chunks: ['sale', 'list'],
+      filename: 'list.html',
+    }),
   ],
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
+  },
 
   module: {
     rules: [{
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: "babel-loader",
       },
       {

@@ -1,4 +1,6 @@
-const baseWebpackConfig = require('./base,config,js')
+
+const baseWebpackPlugin = require('./base.config.js')
+const path = require('path')
 
 const devWebpackPartialConfig = {
   watch: true,
@@ -9,4 +11,4 @@ const devWebpackPartialConfig = {
   },
 }
 
-module.exports = Object.assign({}, baseWebpackConfig, devWebpackPartialConfig)
+module.exports = Object.assign({}, baseWebpackPlugin, devWebpackPartialConfig)
