@@ -6,8 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   context: path.resolve(process.cwd(), "src/app"),
   entry,
-  watch: true,
   output: {
+    publicPath: "/dist",
     path: path.resolve(process.cwd(), "dist"),
     filename: "[name].js"
   },
@@ -15,11 +15,9 @@ module.exports = {
     new ExtractTextPlugin("css/[name].css"),
     new HtmlWebpackPlugin({
       title: 'sale',
-      // filename: path.resolve(process.cwd(), "src/base/webpack.template.html"),
-      // filename: "assets/sale.html",
-      // template: "../base/webpack.template.html",
-      template: path.resolve(process.cwd(), "src/base/webpack.template.html"),
-      chunks: ['list']
+      template: '../base/webpack.template.html',
+      chunks: ['sale'],
+      filename: 'sale.html',
     }),
   ],
 
